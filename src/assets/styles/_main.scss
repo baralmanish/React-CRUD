@@ -1,0 +1,95 @@
+body {
+  font-family: var(--default-font-family);
+  font-style: normal;
+  font-weight: var(--font-normal);
+  font-size: var(--default-font-size);
+  line-height: var(--default-line-height);
+  background: var(--white);
+  color: var(--black);
+  margin: 0;
+  position: relative;
+  height: 100%;
+
+  .app-container {
+    width: 100%;
+    max-width: 1157px;
+    padding-right: calc(3rem * 0.5);
+    padding-left: calc(3rem * 0.5);
+    margin: 0 auto;
+    clear: both;
+
+    @media (max-width: 992px) {
+      max-width: 960px;
+    }
+
+    @media (max-width: 768px) {
+      max-width: 720px;
+    }
+
+    @media (max-width: 576px) {
+      max-width: 540px;
+    }
+  }
+
+  .app-section-title {
+    font-family: var(--default-font-family);
+    font-weight: var(--font-bold);
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 20px;
+  }
+
+  .action-icons {
+    .action-icon {
+      color: var(--primary-color);
+      cursor: pointer;
+      width: 20px;
+
+      &:hover,
+      &:focus {
+        color: var(--primary-color-hover);
+      }
+    }
+
+    .disabled-action-icon {
+      color: var(--primary-color);
+      cursor: not-allowed;
+      width: 20px;
+      opacity: 0.5;
+    }
+  }
+
+  span.color-label {
+    font-weight: var(--font-bold);
+
+    &.status-active,
+    &.status-granted {
+      color: var(--success-color);
+    }
+
+    &.status-inactive,
+    &.status-not-granted {
+      color: var(--failed-color);
+    }
+
+    &.status-pending {
+      color: var(--pending-color);
+    }
+  }
+
+  .text-success {
+    color: var(--success-color);
+  }
+
+  .text-danger {
+    color: var(--failed-color);
+  }
+
+  .text-uppercase {
+    text-transform: uppercase;
+  }
+
+  .text-capitalize {
+    text-transform: capitalize;
+  }
+}

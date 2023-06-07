@@ -1,21 +1,43 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { FC, useState } from "react";
 
-function App() {
+import { Button, Tabs } from "antd";
+import type { TabsProps } from "antd";
+
+import Beers from "./pages/Beers";
+
+const App: FC = () => {
+  const [selectedTab, setSelectedTab] = useState("1");
+
+  const onChange = (key: string) => {
+    setSelectedTab(key);
+    console.log(key);
+  };
+
+  const items: TabsProps["items"] = [
+    {
+      key: "1",
+      label: "All Beers",
+      children: <Beers />,
+    },
+    {
+      key: "2",
+      label: "My Beers",
+      children: `Content of Tab Pane 2`,
+    },
+  ];
+
+  const operations = <Button type="primary">Add a new beer</Button>;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+    <div className="sss">
+      <Tabs
+        activeKey={selectedTab}
+        items={items}
+        tabBarExtraContent={selectedTab === "2" && operations}
+        onChange={onChange}
+      />
     </div>
   );
-}
+};
 
 export default App;

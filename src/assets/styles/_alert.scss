@@ -1,0 +1,29 @@
+.ant-alert {
+  margin-bottom: 25px;
+
+  border-radius: 5px;
+  color: var(--white);
+  padding: 11px 15px;
+
+  .ant-alert-icon {
+    color: var(--white);
+  }
+
+  .ant-alert-message {
+    color: var(--white);
+  }
+
+  .ant-alert-close-icon {
+    .anticon-close {
+      color: var(--white);
+    }
+  }
+
+  &.ant-alert-success {
+    background: var(--success-color);
+  }
+
+  &.ant-alert-error {
+    background: var(--alert-color);
+  }
+}

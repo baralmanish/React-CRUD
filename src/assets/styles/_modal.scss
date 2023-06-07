@@ -1,0 +1,77 @@
+.ant-modal-root .ant-modal-mask {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.ant-modal:not(.ant-modal-confirm) {
+  .ant-modal-content {
+    padding: 37px 38px;
+
+    .ant-modal-close {
+      background: var(--red);
+      color: var(--white);
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 37px;
+      right: 38px;
+
+      .ant-modal-close-x {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .anticon {
+          font-size: 14px;
+          line-height: inherit;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .ant-modal-header {
+      margin-bottom: 34px;
+
+      .ant-modal-title {
+        font-weight: var(--font-medium);
+        font-size: 20px;
+        // line-height: 23px;
+      }
+    }
+
+    .ant-modal-body {
+    }
+
+    .ant-modal-footer {
+      margin-top: 35px;
+
+      .ant-btn + .ant-btn:not(.ant-dropdown-trigger) {
+        margin-inline-start: 14px;
+      }
+    }
+  }
+}
+
+.ant-modal.ant-modal-confirm {
+  .ant-modal-confirm-btns {
+    margin-top: 15px;
+
+    .ant-btn {
+      height: auto;
+      min-width: auto;
+      font-weight: 400;
+      font-size: 14px;
+
+      &.ant-btn-default {
+        &.ant-btn-dangerous {
+          color: var(--alert-color);
+          border-color: var(--alert-color);
+        }
+      }
+    }
+  }
+}
