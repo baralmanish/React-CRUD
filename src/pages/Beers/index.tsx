@@ -10,7 +10,7 @@ import Loading from "../../components/Loading";
 import BeerService from "../../services/beer.service";
 import { IBeer } from "../../interfaces/beer";
 
-import { perPage } from "../../constants";
+import { PER_PAGE } from "../../constants";
 
 import "./style.scss";
 
@@ -30,6 +30,8 @@ const Beers: FC<IBeerProps> = ({ isMine, setShowAddBeerModal }: IBeerProps) => {
     (async () => {
       if (!isMine) {
         await fetchData();
+      } else {
+        fetchMyBeers();
       }
     })();
   }, [page]);
@@ -50,14 +52,18 @@ const Beers: FC<IBeerProps> = ({ isMine, setShowAddBeerModal }: IBeerProps) => {
       } else {
         setBeer(thisBeer);
       }
-      console.log(">>> thisBeer.length", thisBeer.length, perPage);
-      if (thisBeer.length === Number(perPage)) {
+      if (thisBeer.length === Number(PER_PAGE)) {
         setHasMore(true);
       }
     }
 
     setIsLoading(false);
     setIsLoadingMore(false);
+  };
+
+  const fetchMyBeers = () => {
+    const myBeers = BeerService.getMyBeers();
+    setBeer(myBeers);
   };
 
   if (isLoading) {
@@ -68,7 +74,10 @@ const Beers: FC<IBeerProps> = ({ isMine, setShowAddBeerModal }: IBeerProps) => {
     return (
       <Empty>
         <div>
-          <span onClick={() => setShowAddBeerModal(true)}>Click here</span> to add your first Beer
+          <span onClick={() => setShowAddBeerModal(true)} className="add-beer-span">
+            Click here
+          </span>{" "}
+          to add your first Beer
         </div>
       </Empty>
     );
