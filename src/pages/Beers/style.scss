@@ -1,0 +1,10 @@
+.load-more-container {
+  display: flex;
+  justify-content: center;
+
+  &__button {
+    svg {
+      font-size: 12px;
+    }
+  }
+}

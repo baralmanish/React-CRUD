@@ -59,6 +59,10 @@ body {
     }
   }
 
+  .ant-tooltip-inner {
+    width: 150px;
+  }
+
   span.color-label {
     font-weight: var(--font-bold);
 
@@ -91,5 +95,9 @@ body {
 
   .text-capitalize {
     text-transform: capitalize;
+  }
+
+  .d-flex {
+    display: flex;
   }
 }

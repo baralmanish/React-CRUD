@@ -1,10 +1,15 @@
 import API from "./axios";
-
-const perPage = process.env.REACT_APP_PER_PAGE || 10;
+import { perPage } from "../constants";
 
 class BeerService {
-  get = (page = 1) => {
-    return API.get(`/beers?page=${page}&per_page=${perPage}`)
+  get = (page = 0) => {
+    let url = "/beers";
+
+    if (page) {
+      url = `${url}?page=${page}&per_page=${perPage}`;
+    }
+
+    return API.get(url)
       .then(response => {
         return response;
       })

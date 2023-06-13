@@ -1,1 +1,22 @@
-//
+.test-app {
+  .ant-tabs {
+    &-nav {
+      &::before {
+        display: none;
+      }
+    }
+
+    &-tab {
+      padding: 8px 0;
+      font-size: 17px;
+
+      & + .ant-tabs-tab {
+        margin: 0 0 0 26px;
+      }
+    }
+
+    &-ink-bar {
+      display: none;
+    }
+  }
+}
