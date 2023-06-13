@@ -5,19 +5,22 @@ import type { TabsProps } from "antd";
 
 import Beers from "./pages/Beers";
 
+import BeerService from "./services/beer.service";
+import { IBeer } from "./interfaces/beer";
+
 import BeerBottle from "./assets/images/houzz-beer.png";
 import "./App.scss";
 
 const App: FC = () => {
   const [form] = Form.useForm();
 
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [beer, setBeer] = useState<IBeer[]>([]);
   const [selectedTab, setSelectedTab] = useState("1");
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [showAddBeerModal, setShowAddBeerModal] = useState(false);
 
   const onChange = (key: string) => {
     setSelectedTab(key);
-    console.log(key);
   };
 
   const items: TabsProps["items"] = [
@@ -29,7 +32,7 @@ const App: FC = () => {
     {
       key: "2",
       label: "My Beers",
-      children: <Beers setShowAddBeerModal={setShowAddBeerModal} isMine />,
+      children: <Beers setShowAddBeerModal={setShowAddBeerModal} myBeer={beer} isMine />,
     },
   ];
 
@@ -44,14 +47,16 @@ const App: FC = () => {
     setShowAddBeerModal(false);
   };
 
-  const onFinish = (values: any) => {
+  const onFinish = (values: IBeer) => {
     const thisBeer = {
       id: Date.now(),
       name: values.name,
       tagline: values.tagline,
       description: values.description,
     };
-    console.log(">> onFinish", thisBeer);
+    const myBeer = BeerService.setMyBeers(thisBeer);
+    setBeer(myBeer);
+    handleCancel();
   };
 
   const renderModal = () => {

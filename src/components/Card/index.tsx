@@ -4,6 +4,7 @@ import { Card as AntCard, Tooltip } from "antd";
 
 import { IBeer } from "../../interfaces/beer";
 
+import BeerBottle from "../../assets/images/houzz-beer.png";
 import "./style.scss";
 
 interface ICard {
@@ -18,7 +19,7 @@ const Card: FC<ICard> = ({ beer }: ICard) => {
       <div className="d-flex">
         <div className="app-card__left">
           <Tooltip title={ingredients}>
-            <img src={beer.image_url} />
+            <img src={beer.image_url || BeerBottle} />
           </Tooltip>
         </div>
         <div className="app-card__right">

@@ -17,9 +17,10 @@ import "./style.scss";
 interface IBeerProps {
   isMine?: boolean;
   setShowAddBeerModal?: (showAddBeerModal: boolean) => void;
+  myBeer?: IBeer[];
 }
 
-const Beers: FC<IBeerProps> = ({ isMine, setShowAddBeerModal }: IBeerProps) => {
+const Beers: FC<IBeerProps> = ({ isMine, myBeer, setShowAddBeerModal }: IBeerProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const [beer, setBeer] = useState<IBeer[]>([]);
@@ -35,6 +36,12 @@ const Beers: FC<IBeerProps> = ({ isMine, setShowAddBeerModal }: IBeerProps) => {
       }
     })();
   }, [page]);
+
+  useEffect(() => {
+    if (myBeer) {
+      setBeer(myBeer);
+    }
+  }, [myBeer]);
 
   const fetchData = async () => {
     if (page === 1) {
@@ -61,8 +68,8 @@ const Beers: FC<IBeerProps> = ({ isMine, setShowAddBeerModal }: IBeerProps) => {
     setIsLoadingMore(false);
   };
 
-  const fetchMyBeers = () => {
-    const myBeers = BeerService.getMyBeers();
+  const fetchMyBeers = async () => {
+    const myBeers = await BeerService.getMyBeers();
     setBeer(myBeers);
   };
 
