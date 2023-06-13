@@ -1,0 +1,48 @@
+// root variables
+:root {
+  // colors
+  --white: #ffffff;
+  --white-0: #f0f0f0;
+  --white-1: #f1f1f1;
+  --white-2: #e2e2e2;
+  --white-5: #c5c5c5;
+  --white-6: #c6c6c6;
+
+  --black: #000000;
+  --black-1: #111111;
+  --black-2: #222222;
+  --black-3: #333333;
+  --black-4: #484644;
+  --black-5: #525252;
+  --black-6: #6a6a6a;
+  --black-7: #7f8ca1;
+
+  --red: #e24c4b;
+  --red-dark: #cf4843;
+  --yellow: #f4bf00;
+  --green: #17a600;
+  --brown: #b19395;
+
+  --gray: #a4a3a3;
+  --gray-dark: #d9d9d9;
+  --blue-light: #00a3ff;
+
+  // theme colors
+  --primary-color: #ed3e24;
+  --primary-color-hover: #fa5e43;
+  --secondary-color: #dedede;
+  --secondary-color-hover: #ecebeb;
+
+  --success-color: #00ba13;
+  --failed-color: #ed3f24;
+  --pending-color: #ef8f00;
+  --alert-color: #eb5757;
+
+  // fonts
+  --default-font-family: "Roboto", sans-serif;
+  --default-font-size: "14px";
+  --default-line-height: "16px";
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-bold: 700;
+}

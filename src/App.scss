@@ -1,0 +1,50 @@
+.test-app {
+  .ant-tabs {
+    &-nav {
+      &::before {
+        display: none;
+      }
+    }
+
+    &-tab {
+      padding: 8px 0;
+      font-size: 17px;
+
+      & + .ant-tabs-tab {
+        margin: 0 0 0 26px;
+      }
+    }
+
+    &-ink-bar {
+      display: none;
+    }
+  }
+}
+
+.add-beer-modal {
+  .ant-modal-content {
+    .ant-modal-close {
+      display: none !important;
+    }
+
+    .add-beer-form {
+      .ant-form-item {
+        margin-bottom: 15px;
+      }
+    }
+
+    .image-container {
+      display: inline-flex;
+      width: 80px;
+      height: 130px;
+      border: 1px solid #ddd;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+
+      img {
+        height: 100px;
+      }
+    }
+  }
+}

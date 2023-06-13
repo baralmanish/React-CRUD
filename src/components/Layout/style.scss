@@ -1,0 +1,32 @@
+.app-layout {
+  background: var(--white);
+
+  .app-header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .app-logo {
+      color: var(--white);
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+
+  .app-content {
+    min-height: 100vh;
+    padding: 30px 50px;
+
+    @media (max-width: 576px) {
+      padding: 30px 30px;
+    }
+  }
+
+  .app-footer {
+    text-align: center;
+  }
+}

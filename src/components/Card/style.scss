@@ -1,0 +1,66 @@
+.app-card {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  &:hover {
+    background: #f3f8fc;
+    cursor: pointer;
+  }
+
+  .ant-card-body {
+    display: flex;
+  }
+
+  &__left {
+    width: 100px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-height: 150px;
+      max-width: 100%;
+    }
+  }
+
+  &__right {
+    width: calc(100% - 110px);
+
+    h2 {
+      font-size: 30px;
+      margin: 0;
+      margin-bottom: 5px;
+    }
+
+    span {
+      display: block;
+      color: #dbaa4c;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .ant-card-body {
+      flex-direction: column;
+    }
+
+    &__left {
+      margin: 0;
+      margin-bottom: 10px;
+      width: 100%;
+
+      img {
+        margin: 0 auto;
+      }
+    }
+
+    &__right {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,139 @@
+.ant-input {
+  height: 36px;
+}
+
+.ant-input-group {
+  display: flex;
+
+  .ant-form-item {
+    margin: 0;
+
+    .ant-input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  .ant-btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.ant-select {
+  &.ant-select-single {
+    .ant-select-selector {
+      height: 36px;
+
+      .ant-select-selection-search {
+        .ant-select-selection-search-input {
+          height: 34px;
+          line-height: 34px;
+        }
+      }
+
+      .ant-select-selection-item,
+      .ant-select-selection-placeholder {
+        line-height: 34px;
+      }
+    }
+  }
+}
+
+.ant-radio-group {
+  .ant-radio-wrapper {
+    span:not(.ant-radio-inner) {
+      line-height: 24px;
+    }
+  }
+  .ant-radio {
+    .ant-radio-inner {
+      width: 25px;
+      height: 25px;
+      border: 1px solid #333;
+
+      &::after {
+        // transform: scale(1);
+        background-color: #fff;
+        left: calc(11px - 7px);
+        top: calc(11px - 7px);
+        width: 15px;
+        height: 15px;
+        margin-block-start: 0;
+        margin-inline-start: 0;
+      }
+    }
+
+    &.ant-radio-checked {
+      .ant-radio-inner {
+        background-color: #fff;
+
+        &::after {
+          transform: scale(1);
+          background-color: #333;
+        }
+      }
+    }
+  }
+}
+
+.ant-checkbox-wrapper {
+  align-items: end;
+
+  .ant-checkbox {
+    .ant-checkbox-inner {
+      width: 25px;
+      height: 25px;
+      border: 1px solid #333;
+
+      &::after {
+        border-color: #fff;
+      }
+    }
+
+    &.ant-checkbox-checked {
+      &:after {
+        border: 2px solid #333;
+      }
+
+      .ant-checkbox-inner {
+        background-color: #333;
+
+        &:after {
+          transform: rotate(45deg) scale(1.5) translate(-50%, -50%);
+          top: 13px;
+          left: 7px;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .ant-checkbox-inner {
+      background-color: #333 !important;
+      border-color: #333 !important;
+    }
+
+    .ant-checkbox-checked {
+      &::after {
+        border-color: #333 !important;
+      }
+    }
+  }
+}
+
+.ant-form {
+  &.ant-form-horizontal {
+    .ant-form-item {
+      .ant-form-item-label {
+        text-align: left;
+      }
+    }
+  }
+
+  .ant-form-item {
+    .ant-form-item-explain-error {
+      font-size: 12px;
+    }
+  }
+}
