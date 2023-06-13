@@ -16,17 +16,15 @@ const Card: FC<ICard> = ({ beer }: ICard) => {
 
   return (
     <AntCard className="app-card">
-      <div className="d-flex">
-        <div className="app-card__left">
-          <Tooltip title={ingredients}>
-            <img src={beer.image_url || BeerBottle} />
-          </Tooltip>
-        </div>
-        <div className="app-card__right">
-          <h2>{beer.name}</h2>
-          <span>{beer.tagline}</span>
-          <p>{beer.description}</p>
-        </div>
+      <div className="app-card__left">
+        <Tooltip title={ingredients}>
+          <img src={beer.image_url || BeerBottle} />
+        </Tooltip>
+      </div>
+      <div className="app-card__right">
+        <h2>{beer.name}</h2>
+        <span>{beer.tagline}</span>
+        <p>{beer.description}</p>
       </div>
     </AntCard>
   );

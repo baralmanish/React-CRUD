@@ -6,6 +6,10 @@
     cursor: pointer;
   }
 
+  .ant-card-body {
+    display: flex;
+  }
+
   &__left {
     width: 100px;
     margin-right: 10px;
@@ -37,6 +41,26 @@
 
     p {
       margin: 0;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .ant-card-body {
+      flex-direction: column;
+    }
+
+    &__left {
+      margin: 0;
+      margin-bottom: 10px;
+      width: 100%;
+
+      img {
+        margin: 0 auto;
+      }
+    }
+
+    &__right {
+      width: 100%;
     }
   }
 }

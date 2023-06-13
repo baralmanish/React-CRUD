@@ -18,9 +18,12 @@
   }
 
   .app-content {
-    // min-height: calc(100vh - 130px);
     min-height: 100vh;
     padding: 30px 50px;
+
+    @media (max-width: 576px) {
+      padding: 30px 30px;
+    }
   }
 
   .app-footer {
